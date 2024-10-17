@@ -1,61 +1,49 @@
-//
-//  ContentView.swift
-//  Locket
-//
-//  Created by 劉旭庭 on 2024/10/17.
-//
-
 import SwiftUI
-import SwiftData
+import WidgetKit
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @State private var selectedImage: UIImage?
+    @State private var isImagePickerPresented = false
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack {
+            if let image = selectedImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 300, height: 300)
+            } else {
+                Text("Take a photo or upload")
+                    .font(.headline)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+
+            HStack {
+                Button(action: {
+                    isImagePickerPresented = true
+                }) {
+                    Text("Select Photo")
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                .padding()
+
+                Button(action: sharePhoto) {
+                    Text("Share with Friends")
                 }
+                .padding()
             }
-        } detail: {
-            Text("Select an item")
         }
+        .sheet(isPresented: $isImagePickerPresented, content: {
+            ImagePicker(selectedImage: $selectedImage)
+        })
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+    func sharePhoto() {
+        PhotoManager.shared.uploadPhoto(image: selectedImage)
+        WidgetCenter.shared.reloadAllTimelines()  // Reload the widget's timeline
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
