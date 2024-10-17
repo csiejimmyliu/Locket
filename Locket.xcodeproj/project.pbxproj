@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BFA783BD2CC0D9DE005D4C14 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA783BC2CC0D9DE005D4C14 /* WidgetKit.framework */; };
+		BFA783BF2CC0D9DE005D4C14 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA783BE2CC0D9DE005D4C14 /* SwiftUI.framework */; };
+		BFA783CC2CC0D9E1005D4C14 /* LocketWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BFA783BA2CC0D9DE005D4C14 /* LocketWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		BFA7839A2CC0D94D005D4C14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,13 +27,47 @@
 			remoteGlobalIDString = BFA783862CC0D94A005D4C14;
 			remoteInfo = Locket;
 		};
+		BFA783CA2CC0D9E1005D4C14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFA7837F2CC0D949005D4C14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFA783B92CC0D9DE005D4C14;
+			remoteInfo = LocketWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BFA783D12CC0D9E1005D4C14 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BFA783CC2CC0D9E1005D4C14 /* LocketWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BFA783872CC0D94A005D4C14 /* Locket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA783992CC0D94D005D4C14 /* LocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA783A32CC0D94D005D4C14 /* LocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFA783BA2CC0D9DE005D4C14 /* LocketWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LocketWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFA783BC2CC0D9DE005D4C14 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		BFA783BE2CC0D9DE005D4C14 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BFA783CD2CC0D9E1005D4C14 /* Exceptions for "LocketWidget" folder in "LocketWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BFA783B92CC0D9DE005D4C14 /* LocketWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BFA783892CC0D94A005D4C14 /* Locket */ = {
@@ -43,6 +83,14 @@
 		BFA783A62CC0D94D005D4C14 /* LocketUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = LocketUITests;
+			sourceTree = "<group>";
+		};
+		BFA783C02CC0D9DE005D4C14 /* LocketWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BFA783CD2CC0D9E1005D4C14 /* Exceptions for "LocketWidget" folder in "LocketWidgetExtension" target */,
+			);
+			path = LocketWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +117,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFA783B72CC0D9DE005D4C14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFA783BF2CC0D9DE005D4C14 /* SwiftUI.framework in Frameworks */,
+				BFA783BD2CC0D9DE005D4C14 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +135,8 @@
 				BFA783892CC0D94A005D4C14 /* Locket */,
 				BFA7839C2CC0D94D005D4C14 /* LocketTests */,
 				BFA783A62CC0D94D005D4C14 /* LocketUITests */,
+				BFA783C02CC0D9DE005D4C14 /* LocketWidget */,
+				BFA783BB2CC0D9DE005D4C14 /* Frameworks */,
 				BFA783882CC0D94A005D4C14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +147,18 @@
 				BFA783872CC0D94A005D4C14 /* Locket.app */,
 				BFA783992CC0D94D005D4C14 /* LocketTests.xctest */,
 				BFA783A32CC0D94D005D4C14 /* LocketUITests.xctest */,
+				BFA783BA2CC0D9DE005D4C14 /* LocketWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BFA783BB2CC0D9DE005D4C14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFA783BC2CC0D9DE005D4C14 /* WidgetKit.framework */,
+				BFA783BE2CC0D9DE005D4C14 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,10 +171,12 @@
 				BFA783832CC0D94A005D4C14 /* Sources */,
 				BFA783842CC0D94A005D4C14 /* Frameworks */,
 				BFA783852CC0D94A005D4C14 /* Resources */,
+				BFA783D12CC0D9E1005D4C14 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BFA783CB2CC0D9E1005D4C14 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				BFA783892CC0D94A005D4C14 /* Locket */,
@@ -163,6 +234,28 @@
 			productReference = BFA783A32CC0D94D005D4C14 /* LocketUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		BFA783B92CC0D9DE005D4C14 /* LocketWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFA783CE2CC0D9E1005D4C14 /* Build configuration list for PBXNativeTarget "LocketWidgetExtension" */;
+			buildPhases = (
+				BFA783B62CC0D9DE005D4C14 /* Sources */,
+				BFA783B72CC0D9DE005D4C14 /* Frameworks */,
+				BFA783B82CC0D9DE005D4C14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BFA783C02CC0D9DE005D4C14 /* LocketWidget */,
+			);
+			name = LocketWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = LocketWidgetExtension;
+			productReference = BFA783BA2CC0D9DE005D4C14 /* LocketWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +277,9 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = BFA783862CC0D94A005D4C14;
 					};
+					BFA783B92CC0D9DE005D4C14 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 				};
 			};
 			buildConfigurationList = BFA783822CC0D949005D4C14 /* Build configuration list for PBXProject "Locket" */;
@@ -203,6 +299,7 @@
 				BFA783862CC0D94A005D4C14 /* Locket */,
 				BFA783982CC0D94D005D4C14 /* LocketTests */,
 				BFA783A22CC0D94D005D4C14 /* LocketUITests */,
+				BFA783B92CC0D9DE005D4C14 /* LocketWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +320,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BFA783A12CC0D94D005D4C14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFA783B82CC0D9DE005D4C14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +357,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFA783B62CC0D9DE005D4C14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +376,11 @@
 			isa = PBXTargetDependency;
 			target = BFA783862CC0D94A005D4C14 /* Locket */;
 			targetProxy = BFA783A42CC0D94D005D4C14 /* PBXContainerItemProxy */;
+		};
+		BFA783CB2CC0D9E1005D4C14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFA783B92CC0D9DE005D4C14 /* LocketWidgetExtension */;
+			targetProxy = BFA783CA2CC0D9E1005D4C14 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -518,6 +634,60 @@
 			};
 			name = Release;
 		};
+		BFA783CF2CC0D9E1005D4C14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62QTRFNKCW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LocketWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LocketWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jimmy.Locket.LocketWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFA783D02CC0D9E1005D4C14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62QTRFNKCW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LocketWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LocketWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jimmy.Locket.LocketWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +723,15 @@
 			buildConfigurations = (
 				BFA783B42CC0D94D005D4C14 /* Debug */,
 				BFA783B52CC0D94D005D4C14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFA783CE2CC0D9E1005D4C14 /* Build configuration list for PBXNativeTarget "LocketWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFA783CF2CC0D9E1005D4C14 /* Debug */,
+				BFA783D02CC0D9E1005D4C14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
